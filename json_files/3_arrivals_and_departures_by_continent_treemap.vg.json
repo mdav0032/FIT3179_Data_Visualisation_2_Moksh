@@ -4,15 +4,60 @@
     "width": 800,
     "height": 400,
 
+    "signals": [
+        {
+            "name": "travel_selection",
+            "value": "total_arrivals_sum",
+            "bind": {
+                "input": "radio",
+                "options": [
+                    "total_arrivals_sum",
+                    "total_departures_sum"
+                ],
+                "labels": [
+                    "Arrivals",
+                    "Departures"
+                ],
+                "name": "Select type of travel: "
+            }
+        }
+    ],
+
     "data": [
         {
-            "name": "tree_with_arrivals_data",
+            "name": "arrivals_data",
             "url": "https://raw.githubusercontent.com/mdav0032/FIT3179_Data_Visualisation_2_Moksh/main/data_files/Data_Extract_From_World_Development_Indicators_Modified_Arrivals.csv",
             "format": { "type": "csv" },
             "transform": [
                 {
                     "type": "filter",
                     "expr": "datum['continent'] != 'Null'"
+                }
+            ]
+        },
+        {
+            "name": "departures_data",
+            "url": "https://raw.githubusercontent.com/mdav0032/FIT3179_Data_Visualisation_2_Moksh/main/data_files/Data_Extract_From_World_Development_Indicators_Modified_Departures.csv",
+            "format": { "type": "csv" },
+            "transform": [
+                {
+                    "type": "filter",
+                    "expr": "datum['continent'] != 'Null'"
+                }
+            ]
+        },
+        {
+            "name": "tree_with_arrivals_and_departures_data",
+            "source": ["arrivals_data", "departures_data"],
+            "transform": [
+                {
+                    "type": "fold",
+                    "fields": ["total_arrivals_sum", "total_departures_sum"],
+                    "as": ["type_of_travel", "num_travellers"]
+                },
+                {
+                    "type": "filter",
+                    "expr": "datum['type_of_travel'] == travel_selection"
                 },
                 {
                     "type": "nest",
@@ -20,7 +65,7 @@
                 },
                 {
                     "type": "treemap",
-                    "field": "total_arrivals_sum",
+                    "field": "num_travellers",
                     "sort": { "field": "value", "order": "descending" },
                     "method": "squarify",
                     "ratio": 1.6,
@@ -33,11 +78,11 @@
         },
         {
             "name": "tree_labels",
-            "source": "tree_with_arrivals_data",
+            "source": "tree_with_arrivals_and_departures_data",
             "transform": [
                 {
                     "type": "filter",
-                    "expr": "datum['total_arrivals_sum'] > 200000000"
+                    "expr": "datum.num_travellers > 200000000"
                 }
             ]
         }
@@ -47,19 +92,19 @@
         {
             "name": "color",
             "type": "ordinal",
-            "domain": {"data": "tree_with_arrivals_data", "field": "continent"},
-            "range": { "scheme": "category20"}
+            "domain": {"data": "tree_with_arrivals_and_departures_data", "field": "continent"},
+            "range": { "scheme": "category10"}
         }
     ],
     
     "marks": [
         {
             "type": "rect",
-            "from": {"data": "tree_with_arrivals_data"},
+            "from": {"data": "tree_with_arrivals_and_departures_data"},
             "encode": {
                 "enter": {
                     "tooltip": {
-                        "signal": "'Country Name: ' + datum['Country Name'] + '.   Continent: ' + datum['continent'] + '.   No. of Tourists: ' + datum['total_arrivals_sum'] + '.'"
+                        "signal": "'Country Name: ' + datum['Country Name'] + '.   Continent: ' + datum['continent'] + '.   No. of Tourists: ' + datum['num_travellers'] + '.'"
                     }
                 },
                 "update": {
@@ -84,7 +129,7 @@
                     "fill": {"value": "#000"},
                     "text": { "field": "Country Name" },
                     "tooltip": {
-                        "signal": "'Country Name: ' + datum['Country Name'] + '.   Continent: ' + datum['continent'] + '.   No. of Tourists: ' + datum['total_arrivals_sum'] + '.'"
+                        "signal": "'Country Name: ' + datum['Country Name'] + '.   Continent: ' + datum['continent'] + '.   No. of Tourists: ' + datum['num_travellers'] + '.'"
                     }
                 },
                 "update": {
