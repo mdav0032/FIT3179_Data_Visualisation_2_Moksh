@@ -1,64 +1,65 @@
 ﻿ID,Name,Parent
-1,North America,
-2,Asia,
-3,Europe,
-4,Oceania,
-5,United States of America,1
-6,Canada,1
-7,China,2
-8,Turkey,3
-9,Japan,2
-10,France,3
-11,Mexico,1
-12,Australia,4
-13,South Korea,2
-14,England,3
-15,Las Vegas Strip (Las Vegas),5
-16,Times Square (New York),5
-17,Central Park (New York),5
-18,Niagara Falls (Ontario),6
-19,Grand Central Terminal (New York),5
-20,Faneuil Hall Marketplace (Boston),5
-21,Disneyworld's Magic Kingdom (Orlando),5
-22,Disneyland Park (Anaheim),5
-23,Forbidden City (Beijing),7
-24,Grand Bazaar (Istanbul),8
-25,Disneyland (Tokyo),9
-26,Notre Dame Cathedral (Paris),10
-27,Golden Gate Park (San Francisco),5
-28,DisneySea (Tokyo),9
-29,Disneyland (Paris),10
-30,Epcot (Florida),5
-31,Sacre Coeur Basilica (Paris),10
-32,Tsim Sha Tsui Waterfront (Hong Kong),7
-33,Pike Place Market (Seattle),5
-34,Zocalo (Mexico City),11
-35,Disney's Animal Kingdom (Florida),5
-36,Disney's Hollywood Studios (Florida),5
-37,Universal Studios (Osaka),9
-38,Great Smoky Mountains (Tennessee),5
-39,Navy Pier (Chicago),5
-40,Louvre (Paris),10
-41,Great Wall of China,7
-42,South Street Seaport (New York),5
-43,Pier 39 (San Francisco),5
-44,Sydney Opera House (Sydney),12
-45,National Museum of Natural History - Smithsonian (Washington D.C.),5
-46,Islands of Adventure - Universal (Orlando),5
-47,Disney's California Adventure (California),5
-48,Ocean Park (Hong Kong),7
-49,Victoria Peak (Hong Kong),7
-50,National Air and Space Museum - Smithsonin (Washington D.C.),5
-51,Eiffel Tower (Paris),10
-52,Everland (Gyeonggi-Do),13
-53,British Museum (London),14
-54,Disneyland (Hong Kong),7
-55,Lotte World (Seoul),13
-56,Lake Mead (Nevada),5
-57,Universal Studios (Florida),5
-58,Lincoln Memorial (Washington D.C.),5
-59,Metropolitan Museum of Art (New York),5
-60,Bourbon Street (New Orleans),5
-61,Universal Studios (Hollywood),5
-62,Palace of Versailles (Versailles),10
-63,Nagashima Spa Land (Kuwana),9
+1,Centre,
+2,North America,1
+3,Asia,1
+4,Europe,1
+5,Oceania,1
+6,United States of America,2
+7,Canada,2
+8,China,3
+9,Turkey,4
+10,Japan,3
+11,France,4
+12,Mexico,2
+13,Australia,5
+14,South Korea,3
+15,England,4
+16,Las Vegas Strip (Las Vegas),6
+17,Times Square (New York),6
+18,Central Park (New York),6
+19,Niagara Falls (Ontario),7
+20,Grand Central Terminal (New York),6
+21,Faneuil Hall Marketplace (Boston),6
+22,Disneyworld's Magic Kingdom (Orlando),6
+23,Disneyland Park (Anaheim),6
+24,Forbidden City (Beijing),8
+25,Grand Bazaar (Istanbul),9
+26,Disneyland (Tokyo),10
+27,Notre Dame Cathedral (Paris),11
+28,Golden Gate Park (San Francisco),6
+29,DisneySea (Tokyo),10
+30,Disneyland (Paris),11
+31,Epcot (Florida),6
+32,Sacre Coeur Basilica (Paris),11
+33,Tsim Sha Tsui Waterfront (Hong Kong),8
+34,Pike Place Market (Seattle),6
+35,Zocalo (Mexico City),12
+36,Disney's Animal Kingdom (Florida),6
+37,Disney's Hollywood Studios (Florida),6
+38,Universal Studios (Osaka),10
+39,Great Smoky Mountains (Tennessee),6
+40,Navy Pier (Chicago),6
+41,Louvre (Paris),11
+42,Great Wall of China,8
+43,South Street Seaport (New York),6
+44,Pier 39 (San Francisco),6
+45,Sydney Opera House (Sydney),13
+46,National Museum of Natural History - Smithsonian (Washington D.C.),6
+47,Islands of Adventure - Universal (Orlando),6
+48,Disney's California Adventure (California),6
+49,Ocean Park (Hong Kong),8
+50,Victoria Peak (Hong Kong),8
+51,National Air and Space Museum - Smithsonin (Washington D.C.),6
+52,Eiffel Tower (Paris),11
+53,Everland (Gyeonggi-Do),14
+54,British Museum (London),15
+55,Disneyland (Hong Kong),8
+56,Lotte World (Seoul),14
+57,Lake Mead (Nevada),6
+58,Universal Studios (Florida),6
+59,Lincoln Memorial (Washington D.C.),6
+60,Metropolitan Museum of Art (New York),6
+61,Bourbon Street (New Orleans),6
+62,Universal Studios (Hollywood),6
+63,Palace of Versailles (Versailles),11
+64,Nagashima Spa Land (Kuwana),10
