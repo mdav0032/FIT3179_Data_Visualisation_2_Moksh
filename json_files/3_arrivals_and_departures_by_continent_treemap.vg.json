@@ -3,6 +3,8 @@
     "title": { "text": "Total Arrivals and Departures by Continent"},
     "width": 800,
     "height": 400,
+    "padding": 10,
+    "autosize": "pad",
 
     "signals": [
         {

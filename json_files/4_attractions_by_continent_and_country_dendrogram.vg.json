@@ -1,0 +1,143 @@
+{
+    "$schema": "https://vega.github.io/schema/vega/v5.json",
+    "title": { "text": "50 Most Famous Tourist Attractions by Continent and Country"},
+    "width": 800,
+    "height": 400,
+    "padding": 10,
+    "autosize": "pad",
+
+    "signals": [
+        {
+            "name": "radius", "value": 280,
+            "bind": {"input": "range", "min": 20, "max": 600}
+        },
+        {
+            "name": "rotate", "value": 0,
+            "bind": {"input": "range", "min": 0, "max": 360, "step": 1}
+        },
+        { 
+            "name": "originX", 
+            "update": "width / 2" 
+        },
+        { 
+            "name": "originY", 
+            "update": "height / 2" 
+        }
+    ],
+
+    "data": [
+        {
+            "name": "tree",
+            "url": "https://raw.githubusercontent.com/mdav0032/FIT3179_Data_Visualisation_2_Moksh/main/data_files/Most_visited_tourist_attractions.json", 
+            "transform": [
+                {
+                    "type": "stratify",
+                    "key": "ID",
+                    "parentKey": "Parent"
+                },
+                {
+                    "type": "tree",
+                    "method": "cluster",
+                    "size": [1, {"signal": "radius"}],
+                    "as": ["alpha", "radius", "depth", "children"]
+                },
+                {
+                    "type": "formula",
+                    "expr": "(rotate + 360 * datum.alpha + 270) % 360",
+                    "as":   "angle"
+                },
+                {
+                    "type": "formula",
+                    "expr": "PI * datum.angle / 180",
+                    "as":   "radians"
+                },
+                {
+                    "type": "formula",
+                    "expr": "inrange(datum.angle, [90, 270])",
+                    "as":   "leftside"
+                },
+                {
+                    "type": "formula",
+                    "expr": "originX + datum.radius * cos(datum.radians)",
+                    "as":   "x"
+                },
+                {
+                    "type": "formula",
+                    "expr": "originY + datum.radius * sin(datum.radians)",
+                    "as":   "y"
+                }
+            ]
+        },
+        {
+            "name": "links",
+            "source": "tree",
+            "transform": [
+                { "type": "treelinks" },
+                {
+                    "type": "linkpath",
+                    "shape": "diagonal", "orient": "radial",
+                    "sourceX": "source.radians", "sourceY": "source.radius",
+                    "targetX": "target.radians", "targetY": "target.radius"
+                }
+            ]
+        }
+    ],
+    
+    "scales": [
+        {
+            "name": "color",
+            "type": "linear",
+            "range": {"scheme": "yellowgreenblue"},
+            "domain": {"data": "tree", "field": "depth"},
+            "zero": true
+        }
+    ],
+    
+    "marks": [
+        {
+            "type": "path",
+            "from": {"data": "links"},
+            "encode": {
+                "update": {
+                    "x": {"signal": "originX"},
+                    "y": {"signal": "originY"},
+                    "path": {"field": "path"},
+                    "stroke": {"value": "#ccc"}
+                }
+            }
+        },
+        {
+            "type": "symbol",
+            "from": {"data": "tree"},
+            "encode": {
+                "enter": {
+                    "size": {"value": 100},
+                    "stroke": {"value": "#fff"}
+                },
+                "update": {
+                    "x": {"field": "x"},
+                    "y": {"field": "y"},
+                    "fill": {"scale": "color", "field": "depth"}
+                }
+            }
+        },
+        {
+            "type": "text",
+            "from": {"data": "tree"},
+            "encode": {
+                "enter": {
+                    "text": {"field": "Name"},
+                    "fontSize": {"value": 10},
+                    "baseline": {"value": "middle"}
+                },
+                "update": {
+                    "x": {"field": "x"},
+                    "y": {"field": "y"},
+                    "dx": {"signal": "(datum.leftside ? -1 : 1) * 6"},
+                    "angle": {"signal": "datum.leftside ? datum.angle - 180 : datum.angle"},
+                    "align": {"signal": "datum.leftside ? 'right' : 'left'"}
+                }
+            }
+        }
+    ]
+}
