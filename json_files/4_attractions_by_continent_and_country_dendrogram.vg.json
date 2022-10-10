@@ -7,14 +7,6 @@
     "autosize": "pad",
 
     "signals": [
-        {
-            "name": "radius", "value": 280,
-            "bind": {"input": "range", "min": 20, "max": 600}
-        },
-        {
-            "name": "rotate", "value": 0,
-            "bind": {"input": "range", "min": 0, "max": 360, "step": 1}
-        },
         { 
             "name": "originX", 
             "update": "width / 2" 
@@ -38,12 +30,12 @@
                 {
                     "type": "tree",
                     "method": "cluster",
-                    "size": [1, {"signal": "radius"}],
+                    "size": [1, 250],
                     "as": ["alpha", "radius", "depth", "children"]
                 },
                 {
                     "type": "formula",
-                    "expr": "(rotate + 360 * datum.alpha + 270) % 360",
+                    "expr": "(360 * datum.alpha + 270) % 360",
                     "as":   "angle"
                 },
                 {
