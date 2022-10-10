@@ -1,0 +1,107 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": { "text": "2020 Australian Domestic Passenger Movement by Airport"},
+    "width": 800,
+    "height": 400,
+    "padding": 10,
+    "autosize": "pad",
+    "projection": { "type": "mercator" },
+    
+    "params": [
+        {
+            "name": "travel_selection",
+            "value": "Dom_Pax_In",
+            "bind": {
+                "input": "select",
+                "options": [
+                    "Dom_Pax_In",
+                    "Dom_Pax_Out"
+                ],
+                "labels": [
+                    "Passengers In",
+                    "Passengers Out"
+                ],
+                "name": "Select type of travel: "
+            }
+        }
+    ],
+
+    "layer": [
+        {
+            "data": { 
+                "url": "https://raw.githubusercontent.com/mdav0032/FIT3179_Data_Visualisation_2_Moksh/main/json_files/STE_2021_AUST_GDA2020.topojson",
+                "format": { 
+                    "type": "topojson", 
+                    "feature": "STE_2021_AUST_GDA2020" 
+                } 
+            },
+            
+            "mark": { 
+                "type": "geoshape",
+                "fill": "lightgray",
+                "stroke": "white",
+                "strokeWidth": 0.3
+            }
+        },
+
+        {
+            "data": {
+                "url": "https://raw.githubusercontent.com/mdav0032/FIT3179_Data_Visualisation_2_Moksh/main/data_files/Aus_airport_passenger_data.csv"
+            },
+
+            "transform": [
+                {
+                    "fold": ["Dom_Pax_In", "Dom_Pax_Out"],
+                    "as": ["travel_type", "num_passengers"]
+                },
+                {
+                    "filter": "datum.travel_type == travel_selection"
+                }
+            ],
+            
+            "mark": {
+                "type": "circle"
+            },
+
+            "encoding": {
+                "longitude": {
+                    "field": "Longitude",
+                    "type": "quantitative"
+                },
+                "latitude": {
+                    "field": "Latitude",
+                    "type": "quantitative"
+                },
+                "size": {
+                    "field": "num_passengers",
+                    "type": "quantitative",
+                    "title": "Number of Passengers",
+                    "scale": {
+                        "rangeMin": 200,
+                        "rangeMax": 2000
+                    }
+                },
+                "color": {
+                    "field": "num_passengers",
+                    "type": "quantitative",
+                    "title": "Number of Passengers",
+                    "scale": {
+                        "scheme": { "expr": "travel_selection == 'Dom_Pax_In' ? 'blues' : 'reds'" }
+                    }
+
+                },
+                "tooltip": [
+                    {
+                        "field": "Airport",
+                        "type": "nominal"
+                    },
+                    {
+                        "field": "num_passengers",
+                        "type": "quantitative",
+                        "title": "Number of Passengers:"
+                    }
+                ]
+            }
+        }
+    ]
+}
