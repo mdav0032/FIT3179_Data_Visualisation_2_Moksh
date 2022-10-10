@@ -13,9 +13,9 @@ Karratha,135230,137941,116.846001,-20.736,https://github.com/mdav0032/FIT3179_Da
 Launceston,224144,228293,147.157135,-41.429825,https://github.com/mdav0032/FIT3179_Data_Visualisation_2_Moksh/blob/53f75e8b9f46cba970684ff1fc5466ac769ad694/image_files/passenger_icon.png
 Mackay,225612,225632,149.186813,-21.144337,https://github.com/mdav0032/FIT3179_Data_Visualisation_2_Moksh/blob/53f75e8b9f46cba970684ff1fc5466ac769ad694/image_files/passenger_icon.png
 Melbourne,3218946,3243995,144.946457,-37.840935,https://github.com/mdav0032/FIT3179_Data_Visualisation_2_Moksh/blob/53f75e8b9f46cba970684ff1fc5466ac769ad694/image_files/passenger_icon.png
-Newcastle,190539,190690,151.75,-32.916668,https://github.com/mdav0032/FIT3179_Data_Visualisation_2_Moksh/blob/53f75e8b9f46cba970684ff1fc5466ac769ad694/image_files/passenger_icon.png
-Perth,1479338,1467780,115.857048,-31.953512,https://github.com/mdav0032/FIT3179_Data_Visualisation_2_Moksh/blob/53f75e8b9f46cba970684ff1fc5466ac769ad694/image_files/passenger_icon.png
-Rockhampton,138395,137376,150.511673,-23.375,https://github.com/mdav0032/FIT3179_Data_Visualisation_2_Moksh/blob/53f75e8b9f46cba970684ff1fc5466ac769ad694/image_files/passenger_icon.png
-Sunshine Coast,163615,163763,153.066666,-26.65,https://github.com/mdav0032/FIT3179_Data_Visualisation_2_Moksh/blob/53f75e8b9f46cba970684ff1fc5466ac769ad694/image_files/passenger_icon.png
-Sydney,3757763,3687017,151.2099,-33.865143,https://github.com/mdav0032/FIT3179_Data_Visualisation_2_Moksh/blob/53f75e8b9f46cba970684ff1fc5466ac769ad694/image_files/passenger_icon.png
-Townsville,382177,376126,146.816956,-19.258965,https://github.com/mdav0032/FIT3179_Data_Visualisation_2_Moksh/blob/53f75e8b9f46cba970684ff1fc5466ac769ad694/image_files/passenger_icon.png
+Newcastle,190539,190690,151.75,-32.916668,../image_files/passenger_icon.png
+Perth,1479338,1467780,115.857048,-31.953512,../image_files/passenger_icon.png
+Rockhampton,138395,137376,150.511673,-23.375,../image_files/passenger_icon.png
+Sunshine Coast,163615,163763,153.066666,-26.65,../image_files/passenger_icon.png
+Sydney,3757763,3687017,151.2099,-33.865143,../image_files/passenger_icon.png
+Townsville,382177,376126,146.816956,-19.258965,../image_files/passenger_icon.png
