@@ -160,6 +160,16 @@
                 "text": { "field": "text_annotation" }
             }
         }
-    ]
+    ],
 
+    "config": {
+        "legend": {
+            "orient": "bottom", 
+            "layout": {
+                "bottom": {
+                    "anchor": "middle"
+                }
+            }
+        }
+    }
 }
