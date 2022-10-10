@@ -1,0 +1,96 @@
+<!DOCTYPE html> 
+
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script> 
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script> 
+        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+        <script src="./js_files/vega_lite_vis.js"></script>
+        <link rel="stylesheet" href="./styles.css">
+        <title>Tourism in the World</title> 
+    </head>
+
+    <body>
+
+        <!-- Title Section -->
+        <h1>Tourism in the World</h1>
+
+        <!-- Section for Visualisation 1 -->
+        <div class="row">
+            <div class="column">
+                <div id="arrivals_and_departures_treemap"></div>
+            </div>
+            <div class="column">
+                <h2>Arrivals and Departures by Continent and Country</h2> 
+                <p>This map shows the number of total arrivals to each country from 2000 to 2020.</p>
+                <p>Note: Grey represent countries with missing data.</p>
+            </div>
+        </div>
+
+        <br>
+
+        <!-- Section for Visualisation 2 -->
+        <div class="row">
+            <div class="column">
+                <h2>Arrivals and Departures by Country and Year</h2> 
+                <p>This map shows the number of total arrivals to each country from 2000 to 2020.</p>
+                <p>Note: Grey represent countries with missing data.</p>                
+            </div>
+            <div class="column">
+                <div id="arrivals_and_departures_map"></div>
+            </div>
+        </div>
+
+        <br>
+
+        <!-- Section for Visualisation 3 -->
+        <div class="row">
+            <div class="column">
+                <div id="receipts_and_expenditure_bar"></div>
+            </div>
+            <div class="column">
+                <h2>Receipts and Expenditure by Continent and Country</h2> 
+                <p>This map shows the number of total arrivals to each country from 2000 to 2020.</p>
+                <p>Note: Grey represent countries with missing data.</p>
+            </div>
+        </div>
+
+        <br>
+
+        <!-- Section for Visualisation 4 -->
+        <div class="row">
+            <div class="column">
+                <h2>50 Most Famous Tourist Attractions by Continent and Country</h2> 
+                <p>This map shows the total receipts (inflow) and expenditure (outflow) each country had from tourism, from 2000 to 2020.
+                It also shows the net profit (inflow - outflow). The countries are sorted based on the order of descending net profit.</p>
+            </div>
+            <div class="column">
+                <div id="attractions_dendrogram"></div>
+            </div>
+        </div>
+
+        <br>
+
+        <!-- Section for Visualisation 5 -->
+        <div class="row">
+            <div class="column">
+                <div id="airport_traffic_map"></div>
+            </div>
+            <div class="column">
+                <h2>Passenger Traffic in Australia by Airport</h2> 
+                <p>This map shows the number of total arrivals to each country from 2000 to 2020.</p>
+                <p>Note: Grey represent countries with missing data.</p>
+            </div>
+        </div>
+
+        <br>
+
+        <h4>VISUALISATION BY MOKSH DAVE FOR FIT3179 DATA VISUALISATION 2 ASSIGNMENT</h2>
+
+    </body>
+
+</html>
