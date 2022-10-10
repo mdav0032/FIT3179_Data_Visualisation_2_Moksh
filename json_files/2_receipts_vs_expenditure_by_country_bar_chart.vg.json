@@ -1,7 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": { "text": "Total Receipts and Expenditures by Country"},
-    "width": 800,
+    "width": 700,
     "height": 400,
     "padding": 10,
     "autosize": "pad",
@@ -150,7 +149,7 @@
             "mark": {
                 "type": "text",
                 "align": "left",
-                "dx": -380,
+                "dx": -340,
                 "dy": -180,
                 "baseline": "middle",
                 "fontStyle": "italic"

@@ -1,7 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega/v5.json",
-    "title": { "text": "50 Most Famous Tourist Attractions by Continent and Country"},
-    "width": 800,
+    "width": 700,
     "height": 400,
     "padding": 10,
     "autosize": "pad",
@@ -30,7 +29,7 @@
                 {
                     "type": "tree",
                     "method": "cluster",
-                    "size": [1, 250],
+                    "size": [1, 200],
                     "as": ["alpha", "radius", "depth", "children"]
                 },
                 {

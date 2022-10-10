@@ -1,7 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": { "text": "2020 Australian Domestic Passenger Movement by Airport"},
-    "width": 800,
+    "width": 700,
     "height": 400,
     "padding": 10,
     "autosize": "pad",
