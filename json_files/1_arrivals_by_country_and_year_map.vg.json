@@ -4,7 +4,6 @@
     "height": 400,
     "padding": 10,
     "autosize": "pad",
-    "projection": { "type": "equalEarth" },
     
     "params": [
         {
@@ -17,8 +16,26 @@
                 "step": 1,
                 "name": "Select year: "
             }
+        },
+        {
+            "name": "rotation",
+            "value": 0,
+            "bind": {
+                "input": "range",
+                "min": -180,
+                "max": 180,
+                "step": 10,
+                "name": "Rotate map: "
+            }
         }
     ],
+
+    "projection": { 
+        "type": "orthographic", 
+        "rotate": {
+            "expr": "[0-rotation, 0]"
+        }
+    },
     
     "layer": [
         {

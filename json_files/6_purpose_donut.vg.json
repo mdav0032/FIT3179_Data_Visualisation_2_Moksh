@@ -22,40 +22,67 @@
         {
             "calculate": "datum.Number_of_visitors / datum.total_visitors * 100",
             "as": "percentage_val"
+        },
+        {
+            "calculate": "'52.7% of visitors came; to Australia to visit friends; and relatives, making it; the most common; visit purpose.'",
+            "as": "text_annotation_raw"
+        },
+        {
+            "calculate": "split(datum.text_annotation_raw, ';')",
+            "as": "text_annotation"
         }
     ],
 
-    "mark": {
-        "type": "arc",
-        "innerRadius": 75
-    },
-
-    "encoding": {
-        "theta": {
-            "field": "percentage_val",
-            "type": "quantitative",
-            "stack": true
-        },
-        "color": {
-            "field": "Visit_Purpose",
-            "type": "nominal",
-            "title": "Purpose of Visit",
-            "scale": { "scheme": "plasma" }
-        },
-        "tooltip": [
-            {
-                "field": "Visit_Purpose",
-                "type": "nominal",
-                "title": "Purpose of visit"
+    "layer": [
+        {
+            "mark": {
+                "type": "arc",
+                "innerRadius": 75
             },
-            {
-                "field": "percentage_val",
-                "type": "quantitative",
-                "title": "Percentage of total",
-                "format": ".1f"
+        
+            "encoding": {
+                "theta": {
+                    "field": "percentage_val",
+                    "type": "quantitative",
+                    "stack": true
+                },
+                "color": {
+                    "field": "Visit_Purpose",
+                    "type": "nominal",
+                    "title": "Purpose of Visit",
+                    "scale": { "scheme": "plasma" }
+                },
+                "tooltip": [
+                    {
+                        "field": "Visit_Purpose",
+                        "type": "nominal",
+                        "title": "Purpose of visit"
+                    },
+                    {
+                        "field": "percentage_val",
+                        "type": "quantitative",
+                        "title": "Percentage of total",
+                        "format": ".1f"
+                    }
+                ]
             }
-        ]
-    },
+        },
+
+        {
+            "mark": {
+                "type": "text",
+                "align": "left",
+                "dx": -340,
+                "dy": -10,
+                "baseline": "middle",
+                "fontStyle": "italic"
+            },
+
+            "encoding": {
+                "text": { "field": "text_annotation" }
+            }
+        }
+    ],
 
     "config": {
         "background": "#EAF1F4",
