@@ -1,4 +1,4 @@
-var one_vg = "./json_files/1_arrivals_and_departures_by_country_and_year_map.vg.json"; 
+var one_vg = "./json_files/1_arrivals_by_country_and_year_map.vg.json"; 
 vegaEmbed("#arrivals_and_departures_map", one_vg).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
