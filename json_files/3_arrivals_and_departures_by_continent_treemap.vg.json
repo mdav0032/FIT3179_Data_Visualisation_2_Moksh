@@ -142,14 +142,6 @@
     ],
 
     "config": {
-        "background": "#EAF1F4",
-        "legend": {
-            "orient": "bottom", 
-            "layout": {
-                "bottom": {
-                    "anchor": "middle"
-                }
-            }
-        }
+        "background": "#EAF1F4"
     }
 }
