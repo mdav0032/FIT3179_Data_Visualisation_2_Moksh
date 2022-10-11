@@ -1,0 +1,144 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 700,
+    "height": 400,
+    "padding": 10,
+    "autosize": "pad",
+    "projection": { "type": "equalEarth" },
+    
+    "params": [
+        {
+            "name": "year_selection",
+            "value": 2010,
+            "bind": {
+                "input": "range",
+                "min": 2000,
+                "max": 2020,
+                "step": 1,
+                "name": "Select year: "
+            }
+        }
+    ],
+    
+    "layer": [
+        {
+            "data": {
+              "url": "https://raw.githubusercontent.com/mdav0032/FIT3179_Data_Visualisation_2_Moksh/main/json_files/oceans.topojson",
+              "format": {"type": "topojson", "feature": "oceans"}
+            },
+            "mark": {
+                "type": "geoshape", 
+                "fill": "skyblue",
+                "stroke": "black",
+                "strokeWidth": 0.3
+            }
+        },
+        
+        {
+            "data": { 
+                "url": "https://raw.githubusercontent.com/mdav0032/FIT3179_Data_Visualisation_2_Moksh/main/json_files/ne_110m.topojson",
+                "format": { 
+                    "type": "topojson", 
+                    "feature": "ne_110m_graticules_30" 
+                } 
+            },
+            "mark": { 
+                "type": "geoshape",
+                "fill": null,
+                "stroke": "lightgray"
+            }
+        },
+        {
+            "data": { 
+                "url": "https://raw.githubusercontent.com/mdav0032/FIT3179_Data_Visualisation_2_Moksh/main/json_files/ne_110m.topojson",
+                "format": { 
+                    "type": "topojson", 
+                    "feature": "ne_110m_admin_0_countries" 
+                } 
+            },
+            "mark": {
+                "type": "geoshape", 
+                "fill": "lightgray",
+                "stroke": "black",
+                "strokeWidth": 0.3
+            }
+        },
+        {
+            "data": { 
+                "url": "https://raw.githubusercontent.com/mdav0032/FIT3179_Data_Visualisation_2_Moksh/main/json_files/ne_110m.topojson",
+                "format": { 
+                    "type": "topojson", 
+                    "feature": "ne_110m_admin_0_countries" 
+                } 
+            },
+            "transform": [
+                {
+                    "lookup": "properties.NAME",
+                    "from": {
+                        "data": {
+                            "url": "https://raw.githubusercontent.com/mdav0032/FIT3179_Data_Visualisation_2_Moksh/main/data_files/Data_Extract_From_World_Development_Indicators_Modified_Departures.csv"
+                        },
+                        "key": "Country Name",
+                        "fields": ["2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020"]
+                    }
+                },
+                {
+                    "fold": ["2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020"],
+                    "as": ["year_of_travel", "num_travellers_year"]
+                },
+                {
+                    "calculate": "datum.num_travellers_year / 1000000",
+                    "as": "ppl_in_millions"
+                },
+                {
+                    "filter": "datum.num_travellers_year > 0"
+                },
+                {
+                    "filter": "datum.year_of_travel == year_selection"
+                }
+            ],
+            "mark": { 
+                "type": "geoshape", 
+                "stroke": "black",
+                "strokeWidth": 0.3
+            },
+            "encoding": {
+                "color": {
+                    "field": "ppl_in_millions",
+                    "type": "quantitative",
+                    "scale": {
+                        "type": "threshold",
+                        "domain": [1, 5, 10, 50, 100, 150, 200],
+                        "range": ["#edf8e9", "#c7e9c0", "#a1d99b", "#74c476", "#41ab5d", "#238b45", "#005a32"]
+                    },
+                    "title": "Number of tourists (in millions)"
+                },
+                "tooltip": [
+                    {
+                        "field": "properties.NAME",
+                        "type": "nominal",
+                        "title": "Country Name"
+                    },
+                    {
+                        "field": "ppl_in_millions",
+                        "type": "quantitative",
+                        "title": "Tourists (in millions)",
+                        "format": ".2f"
+                    }
+                ]
+            }
+        }
+    ],
+
+    "config": {
+        "background": "#EAF1F4",
+        "legend": {
+            "orient": "bottom", 
+            "layout": {
+                "bottom": {
+                    "anchor": "middle"
+                }
+            }
+        }
+    }
+}
