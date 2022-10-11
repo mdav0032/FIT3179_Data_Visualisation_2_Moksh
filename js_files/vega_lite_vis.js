@@ -22,3 +22,8 @@ var five_vg = "./json_files/5_aus_traffic_by_airport_map.vg.json";
 vegaEmbed("#airport_traffic_map", five_vg).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
+
+var six_vg = "./json_files/6_purpose_donut.vg.json"; 
+vegaEmbed("#purpose_donut", six_vg).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
