@@ -1,0 +1,69 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 700,
+    "height": 400,
+    "padding": 10,
+    "autosize": "pad",
+
+    "data": {
+        "url": "https://raw.githubusercontent.com/mdav0032/FIT3179_Data_Visualisation_2_Moksh/main/data_files/aus_visit_purpose_data.csv"
+    },
+
+    "transform": [
+        {
+            "joinaggregate": [
+                {
+                    "op": "sum",
+                    "field": "Number_of_visitors",
+                    "as": "total_visitors"
+                }
+            ]
+        },
+        {
+            "calculate": "datum.Number_of_visitors / datum.total_visitors * 100",
+            "as": "percentage_val"
+        }
+    ],
+
+    "mark": {
+        "type": "arc",
+        "innerRadius": 100
+    },
+
+    "encoding": {
+        "theta": {
+            "field": "percentage_val",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Visit_Purpose",
+            "type": "nominal",
+            "title": "Purpose of Visit"
+        },
+        "tooltip": [
+            {
+                "field": "Visit_Purpose",
+                "type": "nominal",
+                "title": "Purpose of visit"
+            },
+            {
+                "field": "percentage_val",
+                "type": "quantitative",
+                "title": "Percentage of total",
+                "format": ".1f"
+            }
+        ]
+    },
+
+    "config": {
+        "background": "#EAF1F4",
+        "legend": {
+            "orient": "bottom", 
+            "layout": {
+                "bottom": {
+                    "anchor": "middle"
+                }
+            }
+        }
+    }
+}
