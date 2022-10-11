@@ -118,7 +118,8 @@
                             {
                                 "field": "num_passengers_dom",
                                 "type": "quantitative",
-                                "title": "Number of Domestic Passengers"
+                                "title": "Number of Domestic Passengers",
+                                "format": ",.7r"
                             }
                         ]
                     }
@@ -165,7 +166,8 @@
                             {
                                 "field": "num_passengers_int",
                                 "type": "quantitative",
-                                "title": "Number of International Passengers"
+                                "title": "Number of International Passengers",
+                                "format": ",.7r"
                             }
                         ]
                     }

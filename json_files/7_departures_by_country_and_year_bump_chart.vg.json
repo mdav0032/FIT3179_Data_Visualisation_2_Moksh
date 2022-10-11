@@ -102,15 +102,19 @@
                 "tooltip": [
                     {
                         "field": "Country Name",
-                        "type": "nominal"
+                        "type": "nominal",
+                        "title": "Country Name"
                     },
                     {
                         "field": "num_travellers_year",
-                        "type": "quantitative"
+                        "type": "quantitative",
+                        "title": "Number of travellers",
+                        "format": ",.8r"
                     },
                     {
                         "field": "yearly_rank",
-                        "type": "quantitative"
+                        "type": "quantitative",
+                        "title": "Rank for the year"
                     }
                 ]
             }
