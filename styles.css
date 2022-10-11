@@ -1,4 +1,4 @@
-body {
+html {
     max-width: 1920px;
     background-color: rgb(234, 241, 244);
 }
@@ -37,8 +37,14 @@ br {
     display: flex;
 }
 
-.columm {
-    flex: 50%;
+.columm_left {
+    max-width: 50%;
+    float: left;
+}
+
+.columm_right {
+    max-width: 50%;
+    float: right;
 }
 
 .chart_wrapper {
