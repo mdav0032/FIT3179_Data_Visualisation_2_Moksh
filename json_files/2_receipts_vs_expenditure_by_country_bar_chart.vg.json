@@ -162,6 +162,7 @@
     ],
 
     "config": {
+        "background": "#EAF1F4",
         "legend": {
             "orient": "bottom", 
             "layout": {

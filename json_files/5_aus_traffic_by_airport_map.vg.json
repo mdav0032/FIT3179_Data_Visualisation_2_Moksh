@@ -9,16 +9,16 @@
     "params": [
         {
             "name": "travel_selection",
-            "value": "Dom_Pax_In",
+            "value": "Arrivals",
             "bind": {
                 "input": "select",
                 "options": [
-                    "Dom_Pax_In",
-                    "Dom_Pax_Out"
+                    "Arrivals",
+                    "Departures"
                 ],
                 "labels": [
-                    "Passengers In",
-                    "Passengers Out"
+                    "Arrivals",
+                    "Departures"
                 ],
                 "name": "Select type of travel: "
             }
@@ -50,68 +50,151 @@
 
             "transform": [
                 {
-                    "fold": ["Dom_Pax_In", "Dom_Pax_Out"],
-                    "as": ["travel_type", "num_passengers"]
+                    "fold": ["Int_Pax_In", "Int_Pax_Out"],
+                    "as": ["travel_type_int", "num_passengers_int"]
                 },
                 {
-                    "filter": "datum.travel_type == travel_selection"
+                    "fold": ["Dom_Pax_In", "Dom_Pax_Out"],
+                    "as": ["travel_type_dom", "num_passengers_dom"]
+                },
+                {
+                    "filter": "travel_selection == 'Arrivals' ? (datum.travel_type_int == 'Int_Pax_In' || datum.travel_type_dom == 'Dom_Pax_In') : (datum.travel_type_int == 'Int_Pax_Out' || datum.travel_type_dom == 'Dom_Pax_Out')"
+                },
+                {
+                    "calculate": "'Note:; - Blue scheme represents the Domestic passengers.; - Red scheme represents the International passengers.'",
+                    "as": "text_annotation_raw"
+                },
+                {
+                    "calculate": "split(datum.text_annotation_raw, ';')",
+                    "as": "text_annotation"
                 }
             ],
-            
-            "mark": {
-                "type": "circle"
+
+            "resolve": {
+                "scale": {
+                    "color": "independent"
+                }
             },
 
-            "encoding": {
-                "longitude": {
-                    "field": "Longitude",
-                    "type": "quantitative"
-                },
-                "latitude": {
-                    "field": "Latitude",
-                    "type": "quantitative"
-                },
-                "size": {
-                    "field": "num_passengers",
-                    "type": "quantitative",
-                    "title": "Number of Passengers",
-                    "scale": {
-                        "rangeMin": 200,
-                        "rangeMax": 2000
-                    }
-                },
-                "color": {
-                    "field": "num_passengers",
-                    "type": "quantitative",
-                    "title": "Number of Passengers",
-                    "scale": {
-                        "scheme": { "expr": "travel_selection == 'Dom_Pax_In' ? 'blues' : 'reds'" }
-                    }
-
-                },
-                "tooltip": [
-                    {
-                        "field": "Airport",
-                        "type": "nominal"
+            "layer": [
+                {
+                    "mark": {
+                        "type": "tick"
                     },
-                    {
-                        "field": "num_passengers",
-                        "type": "quantitative",
-                        "title": "Number of Passengers:"
+        
+                    "encoding": {
+                        "longitude": {
+                            "field": "Longitude_Dom",
+                            "type": "quantitative"
+                        },
+                        "latitude": {
+                            "field": "Latitude_Dom",
+                            "type": "quantitative"
+                        },
+                        "size": {
+                            "field": "num_passengers_dom",
+                            "type": "quantitative",
+                            "title": "Number of Domestic Passengers",
+                            "scale": {
+                                "rangeMin": 5,
+                                "rangeMax": 50
+                            },
+                            "legend": false
+                        },
+                        "color": {
+                            "field": "num_passengers_dom",
+                            "type": "quantitative",
+                            "title": "Number of Domestic Passengers",
+                            "scale": {
+                                "range": ["#259cc6", "#032b5f"]
+                            },
+                            "legend": false
+                        },
+                        "tooltip": [
+                            {
+                                "field": "Airport",
+                                "type": "nominal"
+                            },
+                            {
+                                "field": "num_passengers_dom",
+                                "type": "quantitative",
+                                "title": "Number of Domestic Passengers"
+                            }
+                        ]
                     }
-                ]
-            }
+                },
+
+                {
+                    "mark": {
+                        "type": "tick"
+                    },
+        
+                    "encoding": {
+                        "longitude": {
+                            "field": "Longitude_Int",
+                            "type": "quantitative"
+                        },
+                        "latitude": {
+                            "field": "Latitude_Int",
+                            "type": "quantitative"
+                        },
+                        "size": {
+                            "field": "num_passengers_int",
+                            "type": "quantitative",
+                            "title": "Number of International Passengers",
+                            "scale": {
+                                "rangeMin": 5,
+                                "rangeMax": 50
+                            },
+                            "legend": false
+                        },
+                        "color": {
+                            "field": "num_passengers_int",
+                            "type": "quantitative",
+                            "title": "Number of International Passengers",
+                            "scale": {
+                                "range": ["#ea8743", "#c83418"]
+                            },
+                            "legend": false
+                        },
+                        "tooltip": [
+                            {
+                                "field": "Airport",
+                                "type": "nominal"
+                            },
+                            {
+                                "field": "num_passengers_int",
+                                "type": "quantitative",
+                                "title": "Number of International Passengers"
+                            }
+                        ]
+                    }
+                },
+
+                {
+                    "mark": {
+                        "type": "text",
+                        "align": "left",
+                        "dx": -345,
+                        "dy": 160,
+                        "baseline": "middle",
+                        "fontStyle": "italic",
+                        "fontWeight": "lighter",
+                        "fontSize": 13
+                    },
+        
+                    "encoding": {
+                        "text": { "field": "text_annotation" }
+                    }
+                }
+            ]
         }
     ],
 
     "config": {
-        "legend": {
-            "orient": "bottom", 
-            "layout": {
-                "bottom": {
-                    "anchor": "middle"
-                }
-            }
+        "background": "#EAF1F4",
+        "tick": {
+            "thickness": 3
         }
     }
 }

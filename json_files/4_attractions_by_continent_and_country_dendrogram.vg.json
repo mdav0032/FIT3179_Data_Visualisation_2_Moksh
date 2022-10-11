@@ -130,5 +130,9 @@
                 }
             }
         }
-    ]
+    ],
+
+    "config": {
+        "background": "#EAF1F4"
+    }
 }
