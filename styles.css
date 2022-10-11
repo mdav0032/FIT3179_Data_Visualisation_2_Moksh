@@ -1,5 +1,6 @@
 body {
     max-width: 1920px;
+    background-color: rgb(234, 241, 244);
 }
 
 h1 {
@@ -42,10 +43,6 @@ br {
 
 .chart_wrapper {
     background-color: #525bff;
-}
-
-#site_body {
-    background-color: rgb(234, 241, 244);
 }
 
 #title {
@@ -128,7 +125,7 @@ br {
     border-radius: 30px;
 }
 
-#arrivals_and_departures_treemap, #arrivals_and_departures_map, #receipts_and_expenditure_bar, #attractions_dendrogram, #airport_traffic_map, #purpose_donut {
+#arrivals_and_departures_treemap, #arrivals_map, #receipts_and_expenditure_bar, #attractions_dendrogram, #airport_traffic_map, #purpose_donut, #departures_bump {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
