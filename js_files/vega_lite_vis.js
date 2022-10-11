@@ -1,5 +1,5 @@
 var one_vg = "./json_files/1_arrivals_by_country_and_year_map.vg.json"; 
-vegaEmbed("#arrivals_and_departures_map", one_vg).then(function(result) {
+vegaEmbed("#arrivals_map", one_vg).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
 
@@ -25,5 +25,10 @@ vegaEmbed("#airport_traffic_map", five_vg).then(function(result) {
 
 var six_vg = "./json_files/6_purpose_donut.vg.json"; 
 vegaEmbed("#purpose_donut", six_vg).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+var seven_vg = "./json_files/7_departures_by_country_and_year_bump_chart.vg.json"; 
+vegaEmbed("#departures_bump", seven_vg).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
