@@ -94,7 +94,7 @@
             "name": "color",
             "type": "ordinal",
             "domain": {"data": "tree_with_arrivals_and_departures_data", "field": "continent"},
-            "range": { "scheme": "category10"}
+            "range": { "scheme": "redyellowblue"}
         }
     ],
     

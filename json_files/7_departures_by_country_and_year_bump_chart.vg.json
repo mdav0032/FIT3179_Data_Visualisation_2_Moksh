@@ -1,0 +1,147 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 700,
+    "height": 400,
+    "padding": 10,
+    "autosize": "pad",
+
+    "data": {
+        "url": "https://raw.githubusercontent.com/mdav0032/FIT3179_Data_Visualisation_2_Moksh/main/data_files/Data_Extract_From_World_Development_Indicators_Modified_Departures.csv"
+    },
+
+    "transform": [
+        {
+            "fold": ["2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020"],
+            "as": ["year_of_travel", "travellers_year"]
+        },
+        {
+            "calculate": "parseFloat(datum.travellers_year)",
+            "as": "num_travellers_year"
+        },
+        {
+            "sort": [
+                {
+                    "field": "num_travellers_year",
+                    "order": "descending"
+                }
+            ],
+            "window": [
+                {
+                    "op": "rank",
+                    "as": "yearly_rank"
+                }
+            ],
+            "groupby": ["year_of_travel"]
+        },
+        {
+            "filter": "datum.yearly_rank <= 10"
+        }
+    ],
+
+    "encoding": {
+        "x": {
+            "field": "year_of_travel",
+            "type": "ordinal",
+            "title": "Year of travel",
+            "axis": {
+                "domain": false,
+                "ticks": false,
+                "labelPadding": 20
+            }
+        },
+        "y": {
+            "field": "yearly_rank",
+            "type": "quantitative",
+            "title": "Rank",
+            "sort": "descending",
+            "scale": {"domain": [1, 10]},
+            "axis": {
+                "domain": false,
+                "ticks": false,
+                "labelPadding": 10
+            }
+        },
+        "color": {
+            "field": "Country Name",
+            "type": "nominal",
+            "title": "Country",
+            "scale": { "scheme": "tableau20" }
+        }
+    },
+
+    "layer": [
+        {
+            "params": [
+                {
+                    "name": "country_selection",
+                    "select": {
+                        "type": "point",
+                        "on": "click",
+                        "fields": ["Country Name"]
+                    },
+                    "bind": "legend"
+                }
+            ],
+            
+            "mark": {
+                "type": "circle"
+            },
+            "encoding": {
+                "color": {
+                    "field": "Country Name",
+                    "scale": { "scheme": "tableau20" }
+                },
+                "size": {
+                    "condition": {
+                        "param": "country_selection",
+                        "empty": false,
+                        "value": 200
+                    },
+                    "value": 60
+                },
+                "tooltip": [
+                    {
+                        "field": "Country Name",
+                        "type": "nominal"
+                    },
+                    {
+                        "field": "num_travellers_year",
+                        "type": "quantitative"
+                    },
+                    {
+                        "field": "yearly_rank",
+                        "type": "quantitative"
+                    }
+                ]
+            }
+        },
+
+        {
+            "mark": {
+                "type": "line",
+                "interpolate": "monotone"
+            },
+            "encoding": {
+                "color": {
+                    "field": "Country Name",
+                    "scale": { "scheme": "category20" }
+                },
+                "size": {
+                    "condition": {
+                        "param": "country_selection",
+                        "empty": false,
+                        "value": 5
+                    },
+                    "value": 1
+                }
+            }
+        }
+    ],
+
+    "config": {
+        "background": "#EAF1F4",
+        "view": {
+            "stroke": "transparent"
+        }
+    }
+}

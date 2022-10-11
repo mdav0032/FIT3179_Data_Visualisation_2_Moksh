@@ -11,7 +11,7 @@
             "name": "travel_selection",
             "value": "Arrivals",
             "bind": {
-                "input": "select",
+                "input": "radio",
                 "options": [
                     "Arrivals",
                     "Departures"
@@ -195,6 +195,9 @@
         "background": "#EAF1F4",
         "tick": {
             "thickness": 3
+        },
+        "view": {
+            "stroke": null
         }
     }
 }

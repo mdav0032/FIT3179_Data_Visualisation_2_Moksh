@@ -71,12 +71,13 @@
                     "feature": "ne_110m_admin_0_countries" 
                 } 
             },
+            
             "transform": [
                 {
                     "lookup": "properties.NAME",
                     "from": {
                         "data": {
-                            "url": "https://raw.githubusercontent.com/mdav0032/FIT3179_Data_Visualisation_2_Moksh/main/data_files/Data_Extract_From_World_Development_Indicators_Modified_Departures.csv"
+                            "url": "https://raw.githubusercontent.com/mdav0032/FIT3179_Data_Visualisation_2_Moksh/main/data_files/Data_Extract_From_World_Development_Indicators_Modified_Arrivals.csv"
                         },
                         "key": "Country Name",
                         "fields": ["2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020"]
@@ -97,18 +98,20 @@
                     "filter": "datum.year_of_travel == year_selection"
                 }
             ],
+
             "mark": { 
                 "type": "geoshape", 
                 "stroke": "black",
                 "strokeWidth": 0.3
             },
+
             "encoding": {
                 "color": {
                     "field": "ppl_in_millions",
                     "type": "quantitative",
                     "scale": {
                         "type": "threshold",
-                        "domain": [1, 5, 10, 50, 100, 150, 200],
+                        "domain": [0, 5, 10, 50, 100, 150, 200],
                         "range": ["#edf8e9", "#c7e9c0", "#a1d99b", "#74c476", "#41ab5d", "#238b45", "#005a32"]
                     },
                     "title": "Number of tourists (in millions)"
@@ -139,6 +142,9 @@
                     "anchor": "middle"
                 }
             }
+        },
+        "view": {
+            "stroke": null
         }
     }
 }

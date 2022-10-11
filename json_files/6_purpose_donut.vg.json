@@ -27,18 +27,20 @@
 
     "mark": {
         "type": "arc",
-        "innerRadius": 100
+        "innerRadius": 75
     },
 
     "encoding": {
         "theta": {
             "field": "percentage_val",
-            "type": "quantitative"
+            "type": "quantitative",
+            "stack": true
         },
         "color": {
             "field": "Visit_Purpose",
             "type": "nominal",
-            "title": "Purpose of Visit"
+            "title": "Purpose of Visit",
+            "scale": { "scheme": "plasma" }
         },
         "tooltip": [
             {
