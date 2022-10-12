@@ -128,7 +128,7 @@
             "encoding": {
                 "color": {
                     "field": "Country Name",
-                    "scale": { "scheme": "category20" }
+                    "scale": { "scheme": "tableau20" }
                 },
                 "size": {
                     "condition": {

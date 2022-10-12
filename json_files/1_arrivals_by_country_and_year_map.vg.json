@@ -25,7 +25,7 @@
                 "min": -180,
                 "max": 180,
                 "step": 10,
-                "name": "Rotate map: "
+                "name": "Rotate globe: "
             }
         }
     ],
