@@ -17,123 +17,139 @@
         <link rel="stylesheet" href="./styles.css">
 
         <!-- Link to fonts used -->
-        <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Bungee+Shade&family=Cutive&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Cutive&display=swap" rel="stylesheet">
 
         <title>Tourism across the World</title> 
     </head>
 
     <body>
-        <!-- Title Section -->
-        <h1 id="title">Tourism across the World</h1>
+        <div id="main_body_css">
+            <!-- Title Section -->
+            <h1 id="title">Tourism across the World</h1>
 
-        <p id="break_middle">&#8203</p> <!-- Empty character for section breaks -->
-        
-        <p id="explanation">Data: From 2000 to 2020. [Explanation to come]</p>
+            <p id="break_middle">&#8203</p> <!-- Empty character for section breaks -->
+            
+            <p id="explanation">Data: From 2000 to 2020. [Explanation to come]</p>
 
-        <p id="break_right">&#8203</p> <!-- Empty character for section breaks -->
+            <p id="break_right">&#8203</p> <!-- Empty character for section breaks -->
 
-        <!-- Section for Visualisation 1 -->
-        <div class="row">
-            <div class="column_left">
-                <div id="arrivals_and_departures_treemap"></div>
+            <!-- Section for Visualisation 1 -->
+            <div class="row">
+                <div class="column_left">
+                    <div id="arrivals_and_departures_treemap"></div>
+                </div>
+                <div class="column_right">
+                    <div class="wrapper">
+                        <h2 id="vis_section_title">Overview of Arrivals and Departures by Continent and Country</h2> 
+                    </div>
+                    <p id="vis_section_text">This shows the number of total arrivals or departures to locations, separated by continent and country.</p>
+                    <p id="vis_section_text">[Choose type of travel using options] [More explanation to come]</p>
+                </div>
             </div>
-            <div class="column_right">
-                <h2 id="vis_section_title">Arrivals and Departures by Continent and Country</h2> 
-                <p id="vis_section_text">This shows the number of total arrivals or departures to locations, separated by continent and country.</p>
-                <p id="vis_section_text">[Choose type of travel using options] [More explanation to come]</p>
+
+            <p id="break_left">&#8203</p> <!-- Empty character for section breaks -->
+
+            <!-- Section for Visualisation 2 -->
+            <div class="row">
+                <div class="column_left">
+                    <div class="wrapper_vis2">
+                        <h2 id="vis_section_title">Deeper Look into Arrivals by Country and Year</h2> 
+                    </div>
+                    <p id="vis_section_text">This shows the number of total visitors arriving at each country from 2000 to 2020.</p>
+                    <p id="vis_section_text">Note: Grey represents countries with missing data.</p>
+                    <p id="vis_section_text">[Choose year using slider] [More explanation to come]</p>
+                </div>
+                <div class="column_right">
+                    <div id="arrivals_map"></div>
+                </div>
             </div>
+
+            <p id="break_right">&#8203</p> <!-- Empty character for section breaks -->
+
+            <!-- Section for Visualisation 3 -->
+            <div class="row">
+                <div class="column_left">
+                    <div id="departures_bump"></div>
+                </div>
+                <div class="column_right">
+                    <div class="wrapper">
+                        <h2 id="vis_section_title">Deeper Look into Departures by Country and Year </h2> 
+                    </div>
+                    <p id="vis_section_text">This shows the top 10 countries with the most departures in each year from 2000 to 2020.</p>
+                    <p id="vis_section_text">[Choose country by selecting on legend] [More explanation to come]</p>
+                </div>
+            </div>
+
+            <p id="break_left">&#8203</p> <!-- Empty character for section breaks -->
+
+            <!-- Section for Visualisation 4 -->
+            <div class="row">
+                <div class="column_left">
+                    <div class="wrapper">
+                        <h2 id="vis_section_title">Receipts and Expenditure by Continent and Country</h2> 
+                    </div>
+                    <p id="vis_section_text">This shows the number of profit each country (in the selected continent) made from tourism.
+                        Profit is calculated as receipts (inflow) 0 expenditure (outflow).</p>
+                    <p id="vis_section_text">[Choose continent using drop-down menu. Bars are ordered based on decreasing total profit.] [More explanation to come]</p>
+                </div>
+                <div class="column_right">
+                    <div id="receipts_and_expenditure_bar"></div>
+                </div>
+            </div>
+
+            <p id="break_right">&#8203</p> <!-- Empty character for section breaks -->
+
+            <!-- Section for Visualisation 5 -->
+            <div class="row">
+                <div class="column_left">
+                    <div id="attractions_dendrogram"></div>
+                </div>
+                <div class="column_right">
+                    <div class="wrapper_vis5">
+                        <h2 id="vis_section_title">50 Most Famous Tourist Attractions by Continent and Country</h2> 
+                    </div>
+                    <p id="vis_section_text">This shows the 50 most commonly visited tourist attractions, clusterd by continent and country.</p>
+                    <p id="vis_section_text">[More explanation to come]</p>
+                </div>
+            </div>
+
+            <p id="break_left">&#8203</p> <!-- Empty character for section breaks -->
+
+            <!-- Section for Visualisation 6 -->
+            <div class="row">
+                <div class="column_left">
+                    <div class="wrapper">
+                        <h2 id="vis_section_title">International vs Domestic Tourism in Australia by Airport</h2> 
+                    </div>
+                    <p id="vis_section_text">This shows the number of total domestic and international passengers in and out of Airports in Australia.</p>
+                    <p id="vis_section_text">[Choose type of travel using options] [More explanation to come]</p>
+                </div>
+                <div class="column_right">
+                    <div id="airport_traffic_map"></div>
+                </div>
+            </div>
+
+            <p id="break_right">&#8203</p> <!-- Empty character for section breaks -->
+
+            <!-- Section for Visualisation 7 -->
+            <div class="row">
+                <div class="column_left">
+                    <div id="purpose_donut"></div>
+                </div>
+                <div class="column_right">
+                    <div class="wrapper_vis7">
+                        <h2 id="vis_section_title">Purpose of Visits to Australia</h2> 
+                    </div>
+                    <p id="vis_section_text">This shows the reasons why different tourists came to visit Australia,
+                        and the percentage in each category.</p>
+                    <p id="vis_section_text">[More explanation to come]</p>
+                </div>
+            </div>
+
+            <p id="break_middle">&#8203</p> <!-- Empty character for section breaks -->
+
+            <h5 id="vis_section_text">VISUALISATION BY MOKSH DAVE FOR FIT3179 DATA VISUALISATION 2 ASSIGNMENT</h2>
         </div>
-
-        <p id="break_left">&#8203</p> <!-- Empty character for section breaks -->
-
-        <!-- Section for Visualisation 2 -->
-        <div class="row">
-            <div class="column_left">
-                <h2 id="vis_section_title">Visitors (Arrivals) by Country and Year</h2> 
-                <p id="vis_section_text">This shows the number of total visitors arriving at each country from 2000 to 2020.</p>
-                <p id="vis_section_text">Note: Grey represents countries with missing data.</p>
-                <p id="vis_section_text">[Choose year using slider] [More explanation to come]</p>
-            </div>
-            <div class="column_right">
-                <div id="arrivals_map"></div>
-            </div>
-        </div>
-
-        <p id="break_right">&#8203</p> <!-- Empty character for section breaks -->
-
-        <!-- Section for Visualisation 3 -->
-        <div class="row">
-            <div class="column_left">
-                <div id="departures_bump"></div>
-            </div>
-            <div class="column_right">
-                <h2 id="vis_section_title">Visitors (Departures) by Country and Year </h2> 
-                <p id="vis_section_text">This shows the top 10 countries with the most departures in each year from 2000 to 2020.</p>
-                <p id="vis_section_text">[Choose country by selecting on legned] [More explanation to come]</p>
-            </div>
-        </div>
-
-        <p id="break_left">&#8203</p> <!-- Empty character for section breaks -->
-
-        <!-- Section for Visualisation 4 -->
-        <div class="row">
-            <div class="column_left">
-                <h2 id="vis_section_title">Receipts and Expenditure by Continent and Country</h2> 
-                <p id="vis_section_text">This shows the number of profit each country (in the selected continent) made from tourism.
-                    Profit is calculated as receipts (inflow) 0 expenditure (outflow).</p>
-                <p id="vis_section_text">[Choose continent using drop-down menu] [More explanation to come]</p>
-            </div>
-            <div class="column_right">
-                <div id="receipts_and_expenditure_bar"></div>
-            </div>
-        </div>
-
-        <p id="break_right">&#8203</p> <!-- Empty character for section breaks -->
-
-        <!-- Section for Visualisation 5 -->
-        <div class="row">
-            <div class="column_left">
-                <div id="attractions_dendrogram"></div>
-            </div>
-            <div class="column_right">
-                <h2 id="vis_section_title">50 Most Famous Tourist Attractions by Continent and Country</h2> 
-                <p id="vis_section_text">This shows the 50 most commonly visited tourist attractions, clusterd by continent and country.</p>
-                <p id="vis_section_text">[More explanation to come]</p>
-            </div>
-        </div>
-
-        <p id="break_left">&#8203</p> <!-- Empty character for section breaks -->
-
-        <!-- Section for Visualisation 6 -->
-        <div class="row">
-            <div class="column_left">
-                <h2 id="vis_section_title">International Tourism Arrivals and Departures in Australia by Airport</h2> 
-                <p id="vis_section_text">This shows the number of total passengers in and out of Airports in Australia.</p>
-                <p id="vis_section_text">[Choose type of travel using options] [More explanation to come]</p>
-            </div>
-            <div class="column_right">
-                <div id="airport_traffic_map"></div>
-            </div>
-        </div>
-
-        <p id="break_right">&#8203</p> <!-- Empty character for section breaks -->
-
-        <!-- Section for Visualisation 7 -->
-        <div class="row">
-            <div class="column_left">
-                <div id="purpose_donut"></div>
-            </div>
-            <div class="column_right">
-                <h2 id="vis_section_title">Purpose of Visits to Australia</h2> 
-                <p id="vis_section_text">This shows the reasons why different tourists came to visit Australia,
-                    and the percentage in each category.</p>
-                <p id="vis_section_text">[More explanation to come]</p>
-            </div>
-        </div>
-
-        <p id="break_middle">&#8203</p> <!-- Empty character for section breaks -->
-
-        <h5 id="vis_section_text">VISUALISATION BY MOKSH DAVE FOR FIT3179 DATA VISUALISATION 2 ASSIGNMENT</h2>
     </body>
 
 </html>

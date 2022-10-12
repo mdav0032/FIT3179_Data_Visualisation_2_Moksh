@@ -1,6 +1,13 @@
 html {
-    max-width: 1920px;
-    background-color: rgb(234, 241, 244);
+    margin: auto;
+    display: table;
+}
+
+body {
+    background-image: url("./image_files/planes_flight_background.jpg");
+    background-size: 20%;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 h1 {
@@ -51,6 +58,13 @@ br {
     background-color: #525bff;
 }
 
+#main_body_css {
+    width: 1400px;
+    vertical-align: middle;
+    display: table-cell;
+    background-color: rgb(234, 241, 244);
+}
+
 #title {
     background-image: url("./image_files/travel_background_updated.png");
     background-repeat: no-repeat;
@@ -59,7 +73,6 @@ br {
     margin-bottom: 0px;
     padding-top: 100px;
     padding-bottom: 100px;
-    border-radius: 50px;
 }
 
 #explanation {
@@ -86,17 +99,73 @@ br {
     border-radius: 30px;
 }
 
-#vis_section_title {
+.wrapper {
+    position: relative;
     background-color: #525bff;
     margin-top: 0px;
     margin-bottom: 5px;
     padding-top: 0px;
-    padding-bottom: 30px;
+    padding-bottom: 135px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.wrapper_vis2 {
+    position: relative;
+    background-color: #525bff;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    padding-top: 0px;
+    padding-bottom: 100px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.wrapper_vis5 {
+    position: relative;
+    background-color: #525bff;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    padding-top: 0px;
+    padding-bottom: 205px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.wrapper_vis7 {
+    position: relative;
+    background-color: #525bff;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    padding-top: 0px;
+    padding-bottom: 100px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+#vis_section_title {
+    top: 0;
+    right: 0;
+    position: absolute;
+    background-color: #52a9ff;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    margin-left: 15px;
+    margin-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     padding-left: 5px;
     padding-right: 5px;
     text-align: center;
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
+    border-radius: 20px;
     font-size: 30px;
 }
 
