@@ -108,7 +108,10 @@
                 "update": {
                     "x": {"field": "x"},
                     "y": {"field": "y"},
-                    "fill": {"scale": "color", "field": "depth"}
+                    "fill": {
+                        "scale": "color", 
+                        "field": "depth"
+                    }
                 }
             }
         },

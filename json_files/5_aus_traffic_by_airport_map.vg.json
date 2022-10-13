@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width": 700,
-    "height": 400,
+    "height": 500,
     "padding": 10,
     "autosize": "pad",
     "projection": { "type": "mercator" },
@@ -96,8 +96,8 @@
                             "type": "quantitative",
                             "title": "Number of Domestic Passengers",
                             "scale": {
-                                "rangeMin": 5,
-                                "rangeMax": 50
+                                "rangeMin": 0,
+                                "rangeMax": 100
                             },
                             "legend": false
                         },
@@ -144,8 +144,8 @@
                             "type": "quantitative",
                             "title": "Number of International Passengers",
                             "scale": {
-                                "rangeMin": 5,
-                                "rangeMax": 50
+                                "rangeMin": 0,
+                                "rangeMax": 100
                             },
                             "legend": false
                         },
@@ -176,13 +176,11 @@
                 {
                     "mark": {
                         "type": "text",
-                        "align": "left",
-                        "dx": -345,
-                        "dy": 160,
+                        "align": "center",
+                        "dx": -100,
+                        "dy": 150,
                         "baseline": "middle",
-                        "fontStyle": "italic",
-                        "fontWeight": "lighter",
-                        "fontSize": 13
+                        "fontSize": 15
                     },
         
                     "encoding": {

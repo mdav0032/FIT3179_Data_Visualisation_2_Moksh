@@ -138,7 +138,7 @@
                     "filter": "datum.ranking == 1"
                 },
                 {
-                    "calculate": "'The country with the highest net profit for; the selected continent was $' + datum['net_profit'] + '.'",
+                    "calculate": "'The country with the highest net profit for; the selected continent was ' + datum['Country Name'] + '.'",
                     "as": "text_annotation_raw"
                 },
                 {
@@ -153,7 +153,7 @@
                 "dx": -340,
                 "dy": -180,
                 "baseline": "middle",
-                "fontStyle": "italic"
+                "fontSize": 15
             },
 
             "encoding": {

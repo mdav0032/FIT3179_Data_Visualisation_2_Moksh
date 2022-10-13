@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega/v5.json",
     "width": 700,
-    "height": 400,
+    "height": 350,
     "padding": 10,
     "autosize": "pad",
 
@@ -94,7 +94,7 @@
             "name": "color",
             "type": "ordinal",
             "domain": {"data": "tree_with_arrivals_and_departures_data", "field": "continent"},
-            "range": { "scheme": "redyellowblue"}
+            "range": { "scheme": "accent"}
         }
     ],
     
@@ -106,7 +106,8 @@
                 "enter": {
                     "tooltip": {
                         "signal": "'Country Name: ' + datum['Country Name'] + '.   Continent: ' + datum['continent'] + '.   No. of Tourists: ' + datum['num_travellers'] + '.'"
-                    }
+                    },
+                    "stroke": { "value": "white"}
                 },
                 "update": {
                     "fill": {
@@ -116,7 +117,8 @@
                     "x": {"field": "x0"},
                     "y": {"field": "y0"},
                     "x2": {"field": "x1"},
-                    "y2": {"field": "y1"}
+                    "y2": {"field": "y1"},
+                    "strokeWidth": { "value": 2}
                 }
             }
         },
@@ -129,6 +131,7 @@
                     "baseline": {"value": "middle"},
                     "fill": {"value": "#000"},
                     "text": { "field": "Country Name" },
+                    "limit": { "value": 45 },
                     "tooltip": {
                         "signal": "'Country Name: ' + datum['Country Name'] + '.   Continent: ' + datum['continent'] + '.   No. of Tourists: ' + datum['num_travellers'] + '.'"
                     }
