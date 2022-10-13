@@ -8,6 +8,10 @@ body {
     background-size: 20%;
     margin-top: 0px;
     margin-bottom: 0px;
+    border-style: inset;
+    border-color: #525bff;
+    border-width: 5px;
+    border-radius: 5px;
 }
 
 h1 {
@@ -26,18 +30,11 @@ h5 {
 }
 
 p {
-    font-family: 'Cutive', serif;
+    font-family: 'Open Sans', cursive;
 }
 
 .vega-bind-name {
-    font-family: 'Cutive', serif;
-}
-
-br {
-    display: block;
-    content: " ";
-    margin: 30px 0;
-    background-color: #525bff;
+    font-family: 'Open Sans', cursive;
 }
 
 .row {
@@ -79,6 +76,8 @@ br {
     background-color: #bde4f3;
     margin-top: 5px;
     margin-bottom: 0px;
+    margin-left: 5px;
+    margin-right: 5px;
     padding-top: 30px;
     padding-bottom: 30px;
     padding-left: 5px;
@@ -91,103 +90,27 @@ br {
     background-color: #bde4f3;
     margin-top: 5px;
     margin-bottom: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
     padding-top: 30px;
     padding-bottom: 30px;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 30px;
+    padding-right: 30px;
     text-align: center;
     border-radius: 30px;
 }
 
-.wrapper {
-    position: relative;
-    background-color: #525bff;
-    margin-top: 0px;
-    margin-bottom: 5px;
-    padding-top: 0px;
-    padding-bottom: 135px;
-    padding-left: 5px;
-    padding-right: 5px;
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
-}
-
-.wrapper_vis2 {
-    position: relative;
-    background-color: #525bff;
-    margin-top: 0px;
-    margin-bottom: 5px;
-    padding-top: 0px;
-    padding-bottom: 135px;
-    padding-left: 5px;
-    padding-right: 5px;
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
-}
-
-.wrapper_vis3 {
-    position: relative;
-    background-color: #525bff;
-    margin-top: 0px;
-    margin-bottom: 5px;
-    padding-top: 0px;
-    padding-bottom: 210px;
-    padding-left: 5px;
-    padding-right: 5px;
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
-}
-
-.wrapper_vis4 {
-    position: relative;
-    background-color: #525bff;
-    margin-top: 0px;
-    margin-bottom: 5px;
-    padding-top: 0px;
-    padding-bottom: 170px;
-    padding-left: 5px;
-    padding-right: 5px;
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
-}
-
-.wrapper_vis5 {
-    position: relative;
-    background-color: #525bff;
-    margin-top: 0px;
-    margin-bottom: 5px;
-    padding-top: 0px;
-    padding-bottom: 205px;
-    padding-left: 5px;
-    padding-right: 5px;
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
-}
-
-.wrapper_vis7 {
-    position: relative;
-    background-color: #525bff;
-    margin-top: 0px;
-    margin-bottom: 5px;
-    padding-top: 0px;
-    padding-bottom: 100px;
-    padding-left: 5px;
-    padding-right: 5px;
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
-}
-
 #vis_section_title {
-    top: 0;
-    right: 0;
-    position: absolute;
-    background-color: #52a9ff;
+    background-color: #bde4f3;
+    border-style: outset;
+    border-color: #525bff;
+    border-width: 20px;
     margin-top: 0px;
-    margin-bottom: 5px;
-    margin-left: 15px;
-    margin-right: 15px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    margin-bottom: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     padding-left: 5px;
     padding-right: 5px;
     text-align: center;
@@ -195,35 +118,17 @@ br {
     font-size: 30px;
 }
 
-#break_right {
-    background-color: #525bff;
-    margin-top: 20px;
-    margin-bottom: 0px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-top-left-radius: 30px;
-    border-top-right-radius: 30px;
-    border-bottom-left-radius: 30px;
-}
-
-#break_left {
-    background-color: #525bff;
-    margin-top: 20px;
-    margin-bottom: 0px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-top-left-radius: 30px;
-    border-top-right-radius: 30px;
-    border-bottom-right-radius: 30px;
-}
-
 #break_middle {
-    background-color: #525bff;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-radius: 30px;
+    border-style: dashed;
+    border-color: #525bff;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    height: 0px;
+}
+
+#highlight {
+    color: red;
+    font-weight: bold;
 }
 
 #arrivals_and_departures_treemap, #arrivals_map, #receipts_and_expenditure_bar, #attractions_dendrogram, #airport_traffic_map, #purpose_donut, #departures_bump {
