@@ -8,7 +8,7 @@ body {
     background-size: 20%;
     margin-top: 0px;
     margin-bottom: 0px;
-    border-style: inset;
+    border-style: dashed;
     border-color: #525bff;
     border-width: 5px;
     border-radius: 5px;
@@ -128,6 +128,21 @@ p {
 
 #highlight {
     color: red;
+    font-weight: bold;
+}
+
+#green {
+    color: green;
+    font-weight: bold;
+}
+
+#lightblue {
+    color: blue;
+    font-weight: bold;
+}
+
+#darkblue {
+    color: darkblue;
     font-weight: bold;
 }
 
